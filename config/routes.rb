@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
+  devise_for :users
+  root 'posts#index'
+
+  resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end

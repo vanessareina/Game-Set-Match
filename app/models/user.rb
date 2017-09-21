@@ -1,0 +1,19 @@
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  # mount_uploader :avatar, AvatarUploader
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+         validates :first_name, presence: true
+         validates :last_name, presence: true
+         validates :level, presence: true
+         validates :city, presence: true
+         validates :state, presence: true
+         validates :preference, presence: true
+         validates :age_group, presence: true
+         validates :gender, presence: true
+
+end

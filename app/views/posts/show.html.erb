@@ -1,0 +1,21 @@
+<h1> Post Details </h1>
+
+<h2> <%= @post.title %></h2>
+<h3> <%= @post.level %> </h3>
+<h3> <%= @post.comments %> </h3>
+<h3> <%= @post.city %> </h3>
+<h3> <%= @post.state %> </h3>
+<h3> <%= @post.preference %> </h3>
+<h3> <%= @post.gender %> </h3>
+<h3> <%= @post.age_group %> </h3>
+<h3> <%= @post.time %> </h3>
+<h3> <%= @post.date %> </h3>
+
+
+<h3><%= link_to '<< Home', root_path %> </h3>
+
+<h3><%= link_to 'Edit Post', edit_post_path(@post) %> </h3>
+
+
+
+<%= button_to "Delete Post", @post, method: :delete, data: {confirm: 'Are you sure?'} %>

@@ -1,0 +1,20 @@
+<h1>Posts</h1>
+
+
+<ul>
+  <% if @posts.empty? %>
+  <li> No posts yet </li>
+  <% else %>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to "#{post.title}", post_path(post) %>
+    </li>
+  <% end %>
+  <% end %>
+</ul>
+
+
+  <% if user_signed_in? %>
+    <h3><%= link_to 'Create New Post', new_post_path %> </h3>
+  <% end %>
+<h3><%= link_to 'Delete Post', new_post_path %> </h3>
