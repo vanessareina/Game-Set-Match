@@ -15,9 +15,10 @@
 
 <!-- <h3><%= link_to '<< Home', root_path %> </h3> -->
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user != @post.user %>
 <%= button_to 'Contact this user about playing', post_responses_path(@post.id), method: :post %>
 <%end%>
+
 
 <% if @post.user == current_user %>
 <h3><%= button_to 'Edit Post', edit_post_path(@post), method: :get %> </h3>

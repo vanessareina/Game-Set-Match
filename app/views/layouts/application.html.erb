@@ -20,11 +20,17 @@
           <div class="nav-left">
             <% if user_signed_in? %>
               <h3><%= button_to 'Create New Post', new_post_path, class: "button is-info", method: :get %> </h3>
-              <h3><%= button_to '<< Home', root_path, class: "button is-primary", method: :get %> </h3>
+              <h3><%= button_to 'Home', root_path, class: "button is-primary", method: :get %> </h3>
             <% end %>
+            <div class="nav-center">
+              <p> Game, Set, Match </p>
+            </div>
         </div>
 
+
+
       <!-- <li>This will be a nav bar!</li> -->
+
       <% if user_signed_in? %>
       <li><%= button_to 'Sign Out', destroy_user_session_path, class: "button is-danger", method: :delete %></li>
       <% else %>
@@ -32,6 +38,7 @@
 
       <li><%= link_to 'Sign Up', new_user_registration_path %></li>
       <% end %>
+
     </ul>
 
     <% if !flash.empty? %>

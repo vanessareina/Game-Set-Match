@@ -20,7 +20,8 @@ body {
 }
 
 .nav{
-  background-color: #A5DF00;
+  background-color: #77BA0B;
+  // background-color: #A5DF00;
   opacity: 0.8;
 }
 
@@ -62,7 +63,7 @@ a:hover, a:active {
 }
 
 .control {
-  background-color: #A5DF00;
+  background-color: #77BA0B;
   opacity: 0.8;
   padding: 10px;
   max-height: 500px;
@@ -86,4 +87,10 @@ html, body {
 
 .message:not(:last-child) {
   margin-bottom: 0;
+}
+
+.nav-center{
+  color: blue;
+  font-weight: bold;
+
 }

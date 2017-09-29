@@ -6,6 +6,6 @@ let!(:post) {Post.create!(title: "Friendly singles match in Philly", level: "4.0
     scenario 'user sees a list of posts' do
     visit posts_path
 
-    expect(page).to have_content("Friendly singles match in Philly")
+    expect(page).to have_content("Friendly singles match")
   end
 end
