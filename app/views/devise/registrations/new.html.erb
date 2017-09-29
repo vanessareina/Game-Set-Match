@@ -1,55 +1,65 @@
 <h2>Sign up</h2>
 
+<div class="control">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :first_name, "First Name" %><br />
+    <%= f.label :first_name, "First Name:", :class => 'label' %><br />
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name, "Last Name" %><br />
+    <%= f.label :last_name, "Last Name:", :class => 'label' %><br />
     <%= f.text_field :last_name %>
 
     <div class="field">
-      <%= f.label :city, "City" %><br />
+      <%= f.label :city, "City:", :class => 'label' %><br />
       <%= f.text_field :city %>
     </div>
   </div>
 
   <div class="field">
-    <%= f.label :state, "State" %><br />
-    <%= f.text_field :state %>
+    <%= f.label :state, "State:", :class => 'label' %><br />
+    <!-- <%= f.text_field :state %> -->
+    <%= f.select :state, options_for_select([ "","AK", "AL", "AR", "AS", "AZ",
+    "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "ID", "IL", "ME",
+    "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV",
+    "NY", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT",
+    "VA", "VI", "VT", "WA", "WI", "WV", "WY"]) %>
   </div>
 
   <div class="field">
-    <%= f.label :age_group, "Age Group" %><br />
-    <%= f.text_field :age_group %>
+    <%= f.label :age_group, "Age Group:", :class => 'label' %><br />
+    <!-- <%= f.text_field :age_group %> -->
+    <%= f.select :age_group, options_for_select(["","under 17", "18-25", "26-35", "36-49", "50+", "60+"]) %>
   </div>
 
   <div class="field">
-    <%= f.label :gender, "Gender" %><br />
-    <%= f.text_field :gender %>
+    <%= f.label :gender, "Gender:", :class => 'label' %><br />
+    <!-- <%= f.text_field :gender %> -->
+    <%= f.select :gender, options_for_select(["", "Male", "Female"])%>
   </div>
 
   <div class="field">
-    <%= f.label :level , "USTA Level"%><br />
-    <%= f.text_field :level %>
+    <%= f.label :level , "USTA Level:", :class => 'label'%><br />
+    <!-- <%= f.text_field :level %> -->
+    <%= f.select :level, options_for_select(["","2.5", "3.0", "3.5", "4.0", "4.5", "5.0"])%>
   </div>
 
   <div class="field">
-    <%= f.label :preference , "Preference"%><br />
-    <%= f.text_field :preference %>
+    <%= f.label :preference , "Preference:", :class => 'label'%><br />
+    <!-- <%= f.text_field :preference %> -->
+      <%= f.select :preference, options_for_select(["","Singles", "Doubles", "Singles and Doubles"])%>
   </div>
 
   <div class="field">
-    <%= f.label :email, "Email" %><br />
+    <%= f.label :email, "Email:", :class => 'label' %><br />
     <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :password, "Password" %>
+    <%= f.label :password, "Password:", :class => 'label' %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -57,7 +67,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Password Confirmation" %><br />
+    <%= f.label :password_confirmation, "Password Confirmation:", :class => 'label' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -65,5 +75,6 @@
     <%= f.submit "Sign Up" %>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<!-- <%= render "devise/shared/links" %> -->

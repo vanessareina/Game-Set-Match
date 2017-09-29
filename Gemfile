@@ -22,6 +22,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'selenium-webdriver'
   gem 'faker'
+  
 end
 
 group :test do

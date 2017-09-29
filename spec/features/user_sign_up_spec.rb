@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature "Vistor signs up as a new user" do
   scenario "specifies vaild and required information" do
+    ActionMailer::Base.deliveries.clear
 
     visit root_path
     click_link 'Sign Up'
@@ -11,17 +12,19 @@ feature "Vistor signs up as a new user" do
     fill_in 'Email', with: 'user@email.com'
     fill_in 'user_password', with: 'password'
     fill_in 'Password Confirmation', with: 'password'
-    fill_in 'Gender', with: 'Male'
-    fill_in 'Level', with: "4.0"
+    page.select 'Male', from: 'Gender'
+    page.select '4.0', from: 'Level'
     fill_in 'City', with: "Princeton"
-    fill_in 'State', with: "NJ"
-    fill_in 'Age Group', with: "18-25"
-    fill_in 'Preference', with: "Singles"
+    page.select 'NJ', from: 'State'
+    page.select '18-25', from: 'Age Group'
+    page.select 'Singles', from: 'Preference'
     click_button 'Sign Up'
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
     expect(page).to have_button("Sign Out")
     expect(page).to_not have_content("Sign Up")
+
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 
 
@@ -45,12 +48,12 @@ feature "Vistor signs up as a new user" do
     fill_in 'Email', with: 'user@email.com'
     fill_in 'user_password', with: 'password'
     fill_in 'Password Confirmation', with: 'wrongpassword'
-    fill_in 'Gender', with: 'Male'
-    fill_in 'Level', with: "4.0"
+    page.select 'Male', from: 'Gender'
+    page.select '4.0', from: 'Level'
     fill_in 'City', with: "Princeton"
-    fill_in 'State', with: "NJ"
-    fill_in 'Age Group', with: "18-25"
-    fill_in 'Preference', with: "Singles"
+    page.select 'NJ', from: 'State'
+    page.select '18-25', from: 'Age Group'
+    page.select 'Singles', from: 'Preference'
     click_button 'Sign Up'
 
     expect(page).to_not have_content("Welcome! You have signed up successfully.")

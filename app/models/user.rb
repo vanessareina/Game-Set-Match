@@ -16,4 +16,9 @@ class User < ApplicationRecord
          validates :age_group, presence: true
          validates :gender, presence: true
 
+  after_create :send_welcome_mail
+
+  def send_welcome_mail
+    NewUserMailer.new_user(self).deliver
+  end
 end

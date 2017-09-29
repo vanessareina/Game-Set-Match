@@ -1,2 +1,89 @@
 // @import "*";
 
+body {
+  background-image: url("http://www.kuredu.com/wp-content/uploads/2014/10/Kuredu-tennis-court-1600x7651.jpg");
+  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+
+}
+
+// .nav-left{
+//   background-color: red;
+// }
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.nav{
+  background-color: #A5DF00;
+  opacity: 0.8;
+}
+
+h1{
+  background-color: blue;
+  padding: 8px;
+  color: white;
+}
+
+div{
+  // max-height: 50em;
+  overflow: scroll;
+}
+
+h3{
+  color: black;
+  font-weight: bold;
+}
+
+h2{
+  color: red;
+  font-weight: bold;
+  background-color: white;
+}
+
+a:link, a:visited {
+    // background-color: orange;
+    color: blue;
+    font-weight: bold;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+a:hover, a:active {
+    // background-color: darkgray;
+    color: red;
+}
+
+.control {
+  background-color: #A5DF00;
+  opacity: 0.8;
+  padding: 10px;
+  max-height: 500px;
+
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+.label{
+  color: navy;
+  font-weight: bold;
+}
+
+.login{
+  color: red;
+  font-weight: bold;
+  background-color: white;
+}
+
+.message:not(:last-child) {
+  margin-bottom: 0;
+}

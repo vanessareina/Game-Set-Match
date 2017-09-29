@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
 
-    name "Looking to play a match!"
+    title "Looking to play a match!"
     # description "Really need to practice for a tournament"
     # email {Faker::Internet.email}
     # password "password"
@@ -15,5 +15,6 @@ FactoryGirl.define do
     age_group "18-25"
     gender "Female"
     time "Morning"
+    date "2017-3-30"
   end
 end

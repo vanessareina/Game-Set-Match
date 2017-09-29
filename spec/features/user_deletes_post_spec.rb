@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user visits posts index page' do
-  let!(:post) {Post.create!(title: "Friendly singles match in Philly", level: "4.0", comments: "Looking to play to practice for a tournament", city: "Philadelphia", state: "PA", date: Date.today, preference: "Singles", gender: "Female", time: "Morning", age_group: "18-25")}
+  let!(:post) {Post.create!(title: "Friendly singles match in Philly", level: "4.0", comments: "Looking to play to practice for a tournament", city: "Philadelphia", state: "PA", date: Date.today, preference: "Singles", gender: "Female", time: "Morning", age_group: "18-25", user: user1)}
   let!(:user1) {FactoryGirl.create(:user)}
   scenario 'user sees a list of posts' do
     visit posts_path
@@ -26,7 +26,8 @@ feature 'user visits posts index page' do
     fill_in "user_password", with: user1.password
     click_button "Sign In"
     click_link post.title
-    click_button "Delete Post"
+    
+    page.find('#delete').click
 
     expect(page).to_not have_content(post.title)
   end

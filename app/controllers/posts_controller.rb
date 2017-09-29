@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+
   end
 
   def new
@@ -14,7 +15,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
 
       redirect_to post_path(@post)

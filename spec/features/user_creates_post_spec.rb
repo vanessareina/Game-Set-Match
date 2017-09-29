@@ -9,7 +9,7 @@ feature "User creates new post" do
     fill_in "Email", with: user1.email
     fill_in "user_password", with: user1.password
     click_button "Sign In"
-    click_link "Create New Post"
+    click_button "Create New Post"
 
     expect(page).to have_content("Play Some Tennis!")
     expect(page).to have_button("Post")
@@ -20,6 +20,6 @@ feature "User creates new post" do
   scenario "Un-authenticated user cannot create posts" do
     visit root_path
 
-    expect(page).to_not have_link("Create New Post")
+    expect(page).to_not have_button("Create New Post")
   end
 end

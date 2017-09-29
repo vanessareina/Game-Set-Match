@@ -1,20 +1,22 @@
 <h1>Posts</h1>
 
-
+<div class="control">
 <ul>
   <% if @posts.empty? %>
   <li> No posts yet </li>
   <% else %>
   <% @posts.each do |post| %>
     <li>
-      <%= link_to "#{post.title}", post_path(post) %>
+      <%= link_to "#{post.title}  in  #{post.city}", post_path(post) %>
     </li>
   <% end %>
   <% end %>
 </ul>
+</div>
+<br />
 
 
-  <% if user_signed_in? %>
-    <h3><%= link_to 'Create New Post', new_post_path %> </h3>
-  <% end %>
-<h3><%= link_to 'Delete Post', new_post_path %> </h3>
+  <!-- <% if user_signed_in? %>
+    <h3><%= button_to 'Create New Post', new_post_path, class: "button is-info", method: :get %> </h3>
+  <% end %><br /> -->
+<!-- <h3><%= button_to 'Delete Post', new_post_path, class: "button is-info" %> </h3> -->
